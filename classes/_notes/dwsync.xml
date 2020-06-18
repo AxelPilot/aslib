@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="AsDbErrorException.class.php" server="studssh.cs.hioa.no" local="130374308118303349" remote="130407799220000000" />
+<file name="AsDbException.class.php" server="studssh.cs.hioa.no" local="130374289308577494" remote="130407799220000000" />
+<file name="AsException.class.php" server="studssh.cs.hioa.no" local="130405892866392558" remote="130407799220000000" />
+<file name="AsFormValidationException.class.php" server="studssh.cs.hioa.no" local="130374288621418191" remote="130407799220000000" />
+<file name="AsMySQLi.class.php" server="studssh.cs.hioa.no" local="130407652878387064" remote="130407799220000000" />
+<file name="Button.class.php" server="studssh.cs.hioa.no" local="130399674890260805" remote="130407799220000000" />
+<file name="Change_Password.class.php" server="studssh.cs.hioa.no" local="130417832331826021" remote="130417832350000000" />
+<file name="Competitor.class.php" server="studssh.cs.hioa.no" local="130413857993474594" remote="130413858010000000" />
+<file name="Customer.class.php" server="studssh.cs.hioa.no" local="130405880900968175" remote="130407799220000000" />
+<file name="Delete_Event.class.php" server="studssh.cs.hioa.no" local="130417122293579516" remote="130417122310000000" />
+<file name="Entity.class.php" server="studssh.cs.hioa.no" local="130400034458487019" remote="130407799220000000" />
+<file name="Event.class.php" server="studssh.cs.hioa.no" local="130417183142672180" remote="130417183170000000" />
+<file name="Event_Competitor.class.php" server="studssh.cs.hioa.no" local="130417875569459072" remote="130417875590000000" />
+<file name="Event_List.class.php" server="studssh.cs.hioa.no" local="130416333939267378" remote="130416333960000000" />
+<file name="GUI.class.php" server="studssh.cs.hioa.no" local="130405997234722085" remote="130407799220000000" />
+<file name="Handler.class.php" server="studssh.cs.hioa.no" local="130405073724289494" remote="130407799220000000" />
+<file name="Order.class.php" server="studssh.cs.hioa.no" local="130399817995905980" remote="130407799230000000" />
+<file name="Register_Competitor.class.php" server="studssh.cs.hioa.no" local="130417877331309844" remote="130417877350000000" />
+<file name="Register_Event.class.php" server="studssh.cs.hioa.no" local="130417108119468804" remote="130417108140000000" />
+<file name="Register_User.class.php" server="studssh.cs.hioa.no" local="130417812607007826" remote="130417812630000000" />
+<file name="Ticket_Purchase.class.php" server="studssh.cs.hioa.no" local="130417823617517591" remote="130417823640000000" />
+<file name="Ticket_selector.class.php" server="studssh.cs.hioa.no" local="130417822227068062" remote="130417822250000000" />
+<file name="Update_Event.class.php" server="studssh.cs.hioa.no" local="130417180087097411" remote="130417180110000000" />
+<file name="User.class.php" server="studssh.cs.hioa.no" local="130417817443024430" remote="130417817460000000" />
+<file name="Email.class.php" server="studssh.cs.hioa.no" local="130403605531613729" remote="130407799220000000" />
+<file name="Notification.class.php" server="studssh.cs.hioa.no" local="130417902226213751" remote="130417902250000000" />
+<file name="Notification_List.class.php" server="studssh.cs.hioa.no" local="130418890322306263" remote="130418890320000000" />
+<file name="Login.class.php" server="studssh.cs.hioa.no" local="130417091874329635" remote="130417091890000000" />
+<file name="Logout.class.php" server="studssh.cs.hioa.no" local="130404372668727824" remote="130407799220000000" />
+<file name="Admin_Request.class.php" server="studssh.cs.hioa.no" local="130417904412908823" remote="130417904430000000" />
+<file name="Process_Admin_Request.class.php" server="studssh.cs.hioa.no" local="130407695233839657" remote="130407799230000000" />
+<file name="Apply_For_Admin.class.php" server="studssh.cs.hioa.no" local="130407720816332892" remote="130407799220000000" />
+</dwsync>

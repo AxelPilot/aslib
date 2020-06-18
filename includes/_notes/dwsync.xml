@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="buy_ticket_form.inc.php" server="studssh.cs.hioa.no" local="130418871772255261" remote="130418871770000000" />
+<file name="change_password_form.inc.php" server="studssh.cs.hioa.no" local="130417837498441534" remote="130417837520000000" />
+<file name="confirm_competitor_form.inc.php" server="studssh.cs.hioa.no" local="130418868222682237" remote="130418868240000000" />
+<file name="confirm_event_deletion_form.inc.php" server="studssh.cs.hioa.no" local="130418868395922145" remote="130418868410000000" />
+<file name="confirm_event_form.inc.php" server="studssh.cs.hioa.no" local="130418868508388578" remote="130418868530000000" />
+<file name="confirm_event_update_form.inc.php" server="studssh.cs.hioa.no" local="130418868817386252" remote="130418868830000000" />
+<file name="confirm_order_form.inc.php" server="studssh.cs.hioa.no" local="130418869000766740" remote="130418869010000000" />
+<file name="delete_event_form.inc.php" server="studssh.cs.hioa.no" local="130418722454231034" remote="130418722450000000" />
+<file name="footer.inc.php" server="studssh.cs.hioa.no" local="130418911958493782" remote="130418911960000000" />
+<file name="header.inc.php" server="studssh.cs.hioa.no" local="130418220681092690" remote="130418220710000000" />
+<file name="index_form.inc.php" server="studssh.cs.hioa.no" local="130399728996505505" remote="130407799240000000" />
+<file name="layout.css" server="studssh.cs.hioa.no" local="130418997007518086" remote="130418997010000000" />
+<file name="register_competitor_form.inc.php" server="studssh.cs.hioa.no" local="130418722340404524" remote="130418722340000000" />
+<file name="register_event_form.inc.php" server="studssh.cs.hioa.no" local="130418722263650134" remote="130418722260000000" />
+<file name="register_user_form.inc.php" server="studssh.cs.hioa.no" local="130417073968125458" remote="130417073980000000" />
+<file name="update_event_form.inc.php" server="studssh.cs.hioa.no" local="130418722400927985" remote="130418722400000000" />
+<file name="login_form.inc.php" server="studssh.cs.hioa.no" local="130418898216227769" remote="130418898220000000" />
+<file name="methods.inc.php" server="studssh.cs.hioa.no" local="130417943356806287" remote="130417943380000000" />
+<file name="ajax_header.inc.php" server="studssh.cs.hioa.no" local="130406875150019222" remote="130407799230000000" />
+<file name="skivm.js" server="studssh.cs.hioa.no" local="130418890575450742" remote="130418890570000000" />
+<file name="process_admin_request_form.inc.php" server="studssh.cs.hioa.no" local="130407485254932630" remote="130407799240000000" />
+<file name="apply_for_admin_form.inc.php" server="studssh.cs.hioa.no" local="130407713368736914" remote="130407799230000000" />
+<file name="register_competitor.js" server="studssh.cs.hioa.no" local="130417137691950253" remote="130417137710000000" />
+<file name="head.inc.php" server="studssh.cs.hioa.no" local="130418021893598334" remote="130418021940000000" />
+<file name="update_event.js" server="studssh.cs.hioa.no" local="130417329602379196" remote="130417329630000000" />
+<file name="register_user.js" server="studssh.cs.hioa.no" local="130417811572478654" remote="130417811590000000" />
+<file name="login.js" server="studssh.cs.hioa.no" local="130417097319901104" remote="130417097340000000" />
+<file name="register_event.js" server="studssh.cs.hioa.no" local="130417117365097623" remote="130417117380000000" />
+<file name="delete_event.js" server="studssh.cs.hioa.no" local="130417135907038162" remote="130417135920000000" />
+<file name="ticket_purchase.js" server="studssh.cs.hioa.no" local="130417825502955432" remote="130417825520000000" />
+<file name="change_password.js" server="studssh.cs.hioa.no" local="130417837645599951" remote="130417837660000000" />
+<file name="forgot_password.js" server="studssh.cs.hioa.no" local="130417866023803092" remote="130417866040000000" />
+</dwsync>
