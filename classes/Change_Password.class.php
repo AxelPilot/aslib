@@ -1,6 +1,11 @@
 <?php
 
 // ************************************************************************
+
+namespace com\axelsmidt\aslib;
+
+
+// ************************************************************************
 /**
  *
  */
@@ -19,7 +24,7 @@ class Change_Password extends Handler
  */
 	protected function initial_action()
 	{
-		$this->set_page_subtitle( 'Endre passord' );
+		$this->set_page_subtitle( 'Change password' );
 		$this->print_page_subtitle();
 		include( './includes/change_password_form.inc.php' );
 	}
@@ -30,7 +35,7 @@ class Change_Password extends Handler
  */
 	protected function submitted_action()
 	{
-		$this->set_page_subtitle( 'Endre passord' );
+		$this->set_page_subtitle( 'Change password' );
 		$this->print_page_subtitle();
 
 		try
