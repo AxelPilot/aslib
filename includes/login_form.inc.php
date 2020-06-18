@@ -9,7 +9,7 @@ if( isset( $_GET[ 'error' ] ) )
 	echo '<div class="IndexError">' . $_GET[ 'error' ] . '</div>';
 }
 ?>
-<div class="txtbg2" style="margin-bottom:20px;">Your browser must accept cookies for you to log in.</div>
+<div class="txtbg2" style="margin-bottom:20px;">Your browser must accept cookies for you to sign in.</div>
 <form action="login.php" method="post">
 	<fieldset>
         <div class="FormField NoFloat">
