@@ -4,12 +4,11 @@
 
 namespace com\axelsmidt\aslib;
 
-
 // ************************************************************************
 /**
  *
  */
-class Change_Password extends Handler
+class Register_User extends Handler
 {
 	
 // ************************************************************************
@@ -24,9 +23,9 @@ class Change_Password extends Handler
  */
 	protected function initial_action()
 	{
-		$this->set_page_subtitle( 'Change password' );
+		$this->set_page_subtitle( 'Opprett brukerkonto' );
 		$this->print_page_subtitle();
-		include( './includes/change_password_form.inc.php' );
+		include( './includes/register_user_form.inc.php' );
 	}
 
 // ************************************************************************
@@ -35,35 +34,47 @@ class Change_Password extends Handler
  */
 	protected function submitted_action()
 	{
-		$this->set_page_subtitle( 'Change password' );
+		$this->set_page_subtitle( 'Opprett brukerkonto' );
 		$this->print_page_subtitle();
 
+		// Save the user to the database.
 		try
 		{
-			$user = new User( $_SESSION[ 'user_ID' ] );
-			if( $user->change_password( $_POST[ 'password' ], $_POST[ 'password1' ], $_POST[ 'password2' ] ) )
+			$user = new User( NULL, $_POST[ 'email' ], $_POST[ 'password1' ], $_POST[ 'password2' ], $_POST[ 'lastname' ], 
+				$_POST[ 'firstname' ], $_POST[ 'address' ], $_POST[ 'postal_code' ], $_POST[ 'city' ], $_POST[ 'phone' ] );
+				
+			$user->save_to_db();
+
+			$title = 'Velkommen!';
+			$message = 'Takk for din registrering!' . "\r\n";
+			$message .= 'Velkommen som bruker av Liksom-Ski-VM.' . "\r\n";
+			$notification = new Notification( NULL, $user, $title, $message );
+
+			if( $_POST[ 'admin' ] == 'apply_for_admin' )
 			{
-				// If successful, redirect to index.php and display a confirmation message.
-				redirect( 'index.php?msg=Passordet ditt har blitt endret.' );
-				exit();
+				$user->apply_for_admin();
 			}
+
+			// If successful, redirect to index.php and display a confirmation message.
+			redirect( 'index.php?msg=Takk for din registrering! En bekreftelse har blitt sendt til e-postadressen din.<br />Vennligst klikk på lenken i e-posten for å aktivere kontoen din.' );
+			exit(); // Quit the script.
 		}
 		catch( AsDbErrorException $e )
 		{
 			echo '<div class="Error">' . $e->getAsMessage() . '</div>';
 			echo '<p><div class="Error">Vennligst prøv igjen senere.</div></p>';
-		}
+		}	
 		catch( AsDbException $e )
 		{
 			echo '<div class="Error">' . $e->getAsMessage() . '</div>';
 			echo '<p><div class="Error">Vennligst prøv igjen.</div></p>';
-		}
+		}	
 		catch( AsFormValidationException $e )
 		{
 			$this->validation_exceptions = $e->getAsMessage();
-		}
-
-		include( './includes/change_password_form.inc.php' );
+		}	
+	
+		include( './includes/register_user_form.inc.php' );
 	}
 
 // ************************************************************************
@@ -76,7 +87,7 @@ class Change_Password extends Handler
 
 // ************************************************************************
 
-} // End of class Change_Password.
+} // End of class Register_User.
 
 // ************************************************************************
 

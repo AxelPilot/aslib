@@ -1,6 +1,10 @@
 <?php
 
 // ************************************************************************
+
+namespace com\axelsmidt\aslib;
+
+// ************************************************************************
 /**
  * Note: No checks are made to keep several users from changing the same 
  * event simultaneously.

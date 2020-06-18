@@ -4,7 +4,6 @@
 
 namespace com\axelsmidt\aslib;
 
-
 // ************************************************************************
 /**
  * Adds support for throwing and catching arrays as exceptions.

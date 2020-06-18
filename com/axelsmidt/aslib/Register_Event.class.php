@@ -1,10 +1,14 @@
 <?php
 
 // ************************************************************************
+
+namespace com\axelsmidt\aslib;
+
+// ************************************************************************
 /**
  *
  */
-class Delete_Event extends Handler
+class Register_Event extends Handler
 {
 	
 // ************************************************************************
@@ -19,9 +23,9 @@ class Delete_Event extends Handler
  */
 	protected function initial_action()
 	{
-		$this->set_page_subtitle( 'Slett øvelse' );
+		$this->set_page_subtitle( 'Registrer øvelse' );
 		$this->print_page_subtitle();
-		include( './includes/delete_event_form.inc.php' );
+		include( './includes/register_event_form.inc.php' );
 	}
 
 // ************************************************************************
@@ -32,49 +36,45 @@ class Delete_Event extends Handler
 	{
 		try
 		{
-			$this->event = new Event( $_POST[ 'event_ID' ] );
-			if( $this->event->exists_in_db() )
-			{
-				$this->set_page_subtitle( 'Bekreft sletting av øvelse' );
-				$this->print_page_subtitle();
+			$this->event = new Event( NULL, $_POST[ 'event_time' ], $_POST[ 'event_name' ] );
+			$this->set_page_subtitle( 'Bekreft registrering av øvelse' );
+			$this->print_page_subtitle();
+			echo $this->event->exists_in_db() ? 
+			'<div class="Caution">En øvelse av samme type er allerede registrert på samme tidspunkt.</div>
+			<div class="Error">Ønsker du å registrere den nye øvelsen likevel?</div>' : '';
 
-				// Show the event deletion confirmation page.
-				include( './includes/confirm_event_deletion_form.inc.php' );
-			}
-			else
-			{
-				redirect( 'index.php?msg=Øvelsen er allerede slettet.' );
-			}
+			// Show the event confirmation page.
+			include( './includes/confirm_event_form.inc.php' );
 		}
 		catch( AsDbErrorException $e )
 		{
-			$this->set_page_subtitle( 'Slett øvelse' );
+			$this->set_page_subtitle( 'Registrer øvelse' );
 			$this->print_page_subtitle();
 
 			echo '<div class="Error">' . $e->getAsMessage() . '</div>';
 			echo '<p><div class="Error">Vennligst prøv igjen senere.</div></p>';
 
-			include( './includes/delete_event_form.inc.php' );
+			include( './includes/register_event_form.inc.php' );
 		}
 		catch( AsDbException $e )
 		{
-			$this->set_page_subtitle( 'Slett øvelse' );
+			$this->set_page_subtitle( 'Registrer øvelse' );
 			$this->print_page_subtitle();
 
 			echo '<p><div class="Error">' . $e->getAsMessage() . '</div></p>';
 			echo '<p><div class="Error">Vennligst prøv igjen senere.</div></p>';
 
-			include( './includes/delete_event_form.inc.php' );
+			include( './includes/register_event_form.inc.php' );
 		}	
 		catch( AsFormValidationException $e )
 		{
-			$this->set_page_subtitle( 'Slett øvelse' );
+			$this->set_page_subtitle( 'Registrer øvelse' );
 			$this->print_page_subtitle();
 
 			$this->validation_exceptions = $e->getAsMessage();
 
 			// Show the event registration page again in case of any incorrect form data.
-			include( './includes/delete_event_form.inc.php' );
+			include( './includes/register_event_form.inc.php' );
 		}
 	}
 
@@ -84,27 +84,18 @@ class Delete_Event extends Handler
  */
 	protected function confirmed_action()
 	{
-		$this->set_page_subtitle( 'Slett øvelse' );
+		$this->set_page_subtitle( 'Registrer øvelse' );
 		$this->print_page_subtitle();
 
-		// Delete the event from the database.
+		// Save the event to the database.
 		try
 		{
-			$this->event = new Event( $_POST[ 'event_ID' ] );
-			if( $this->event->exists_in_db() )
-			{
-				$this->event->delete_from_db();
+			$event = new Event( NULL, $_POST[ 'event_time' ], $_POST[ 'event_name' ] );
+			$event->save_to_db( Event::ALLOW_DUPLICATES );
 
-				// If successful, redirect to index.php and display a confirmation message.
-				redirect( 'index.php?msg=Øvelsen er slettet.<br />Berørte personer er informert pr e-post.' );
-				exit(); // Quit the script.
-			}
-			else
-			{
-				// If the event doesn't exist, redirect to index.php and display a message.
-				redirect( 'index.php?msg=Øvelsen finnes ikke.' );
-				exit(); // Quit the script.
-			}
+			// If successful, redirect to index.php and display a confirmation message.
+			redirect( 'index.php?msg=Øvelsen er registrert.' );
+			exit(); // Quit the script.
 		}
 		catch( AsDbErrorException $e )
 		{
@@ -121,7 +112,7 @@ class Delete_Event extends Handler
 			$this->validation_exceptions = $e->getAsMessage();
 		}	
 	
-		include( './includes/delete_event_form.inc.php' );
+		include( './includes/register_event_form.inc.php' );
 	}
 
 // ************************************************************************

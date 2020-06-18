@@ -2,21 +2,18 @@
 
 // ************************************************************************
 
-class Customer extends User
-{
+namespace com\axelsmidt\aslib;
 
 // ************************************************************************
 /**
  *
  */
-	public function __construct( $user_ID, $throw_exceptions = AsException::THROW_ALL )
-	{
-		parent::__construct( $user_ID, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $throw_exceptions );
-	}
-	
+class AsFormValidationException extends AsException
+{
+
 // ************************************************************************
 
-} // end of class Customer.
+} // End of class AsFormValidationException.
 
 // ************************************************************************
 

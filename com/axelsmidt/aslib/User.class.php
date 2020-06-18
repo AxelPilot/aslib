@@ -2,6 +2,10 @@
 
 // ************************************************************************
 
+namespace com\axelsmidt\aslib;
+
+// ************************************************************************
+
 class User extends Entity
 {
 
@@ -90,7 +94,7 @@ class User extends Entity
 			}
 
 			// Creating a new user based on the constructor's input parameters for the purpose 
-			// of registering new user accounts if the user is not previously registered in 
+			// of registering new user accounts, if the user is not previously registered in 
 			// the database.
 			else
 			{
