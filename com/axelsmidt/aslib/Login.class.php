@@ -37,7 +37,7 @@ class Login extends Handler
 	{
 		$this->set_page_subtitle( 'Sign In' );
 		$this->print_page_subtitle();
-		include( './includes/login_form.inc.php' );
+		new Login_Form($this->url);
 	}
 
 // ************************************************************************
@@ -46,7 +46,7 @@ class Login extends Handler
  */
 	protected function submitted_action()
 	{
-		$this->set_page_subtitle( 'Logg inn' );
+		$this->set_page_subtitle( 'Sign In' );
 		$this->print_page_subtitle();
 
 		// Save the user to the database.
@@ -77,7 +77,7 @@ class Login extends Handler
 			$this->validation_exceptions = $e->getAsMessage();
 		}	
 	
-		include( './includes/login_form.inc.php' );
+		new Login_Form($this->url);
 	}
 
 // ************************************************************************

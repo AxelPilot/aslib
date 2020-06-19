@@ -13,7 +13,7 @@ if ( isset( $_POST[ 'submitted' ] ) ) // Check if the form has been submitted.
 	try
 	{
 		// Connect to the database.
-		$mysqli = AsMySQLi::connect2db( $technical_error );
+		$mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." );
 	
 		// Validate the email address.
 		if ( empty( $_POST[ 'email' ] ) )

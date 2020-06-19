@@ -96,7 +96,7 @@ class Notification_List extends GUI
  */
 	protected function get_notifications( $filter = self::UNREAD_ONLY, $ajax = false )
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "
 			SELECT n.notification_ID, n.title, n.message, n.url, n.params, n.registration_date

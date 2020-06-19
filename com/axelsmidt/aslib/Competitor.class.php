@@ -63,7 +63,7 @@ class Competitor extends User
 		
 		if( !$this->is_competitor() )
 		{
-			if ( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+			if ( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 			{
 				// Add the competitor to the database.
 				$query = "
@@ -92,7 +92,7 @@ class Competitor extends User
 					$mysqli->close();
 					if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 					{
-						throw new AsDbErrorException( $technical_error );
+						throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 					}
 					return false;
 				}
@@ -110,7 +110,7 @@ class Competitor extends User
  */
 	public function is_competitor( $throw_exceptions = AsException::THROW_ALL )
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			// Checking if the user is already registered in the database as a competitor.
 			$query = "
@@ -143,7 +143,7 @@ class Competitor extends User
 				$mysqli->close();
 				if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 				{
-					throw new AsDbErrorException( $technical_error );
+					throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 				}
 				return false;
 			}

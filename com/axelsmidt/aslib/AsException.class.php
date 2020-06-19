@@ -8,7 +8,7 @@ namespace com\axelsmidt\aslib;
 /**
  * Adds support for throwing and catching arrays as exceptions.
  */
-class AsException extends Exception
+class AsException extends \Exception
 {
 
 // ************************************************************************

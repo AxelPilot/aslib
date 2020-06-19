@@ -104,7 +104,7 @@ class Event_Competitor extends Entity
  */
 	public function exists_in_db( $throw_exceptions = AsException::THROW_ALL )
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "";
 		
@@ -148,7 +148,7 @@ class Event_Competitor extends Entity
 				$mysqli->close();
 				if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 				{
-					throw new AsDbErrorException( $technical_error );
+					throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 				}
 				return false;
 			}

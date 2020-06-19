@@ -457,7 +457,7 @@ class Event extends Entity
  */
 	public function exists_in_db( $throw_exceptions = AsException::THROW_ALL )
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "";
 		
@@ -486,7 +486,7 @@ class Event extends Entity
 				$mysqli->close();
 				if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 				{
-					throw new AsDbErrorException( $technical_error );
+					throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 				}
 				return false;
 			}
@@ -513,7 +513,7 @@ class Event extends Entity
 				$mysqli->close();
 				if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 				{
-					throw new AsDbErrorException( $technical_error );
+					throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 				}
 				return false;
 			}
@@ -718,7 +718,7 @@ class Event extends Entity
  */
 	public function get_customers()
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "
 			SELECT u.user_ID, u.firstname, u.lastname, u.email, SUM(o.ticket_count) AS tickets
@@ -756,7 +756,7 @@ class Event extends Entity
  */
 	public function get_competitors()
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "
 			SELECT u.firstname, u.lastname, u.email, c.nationality
@@ -794,7 +794,7 @@ class Event extends Entity
  */
 	public function get_tickets_sold()
 	{
-		if( $mysqli = AsMySQLi::connect2db( $technical_error ) )
+		if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) )
 		{
 			$query = "
 			SELECT e.event_ID, SUM(o.ticket_count) AS tickets

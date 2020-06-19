@@ -1,3 +1,8 @@
+<?php
+
+use com\axelsmidt\aslib\cms as cms;
+
+?>
 <!-- End of Content -->
 </div>
 </div>
@@ -72,7 +77,7 @@ else
 <?php
 if ( $loggedIn )
 {
-	$notification_list = new Notification_List( $_SESSION[ 'user_ID' ] );
+	$notification_list = new cms\Notification_List( $_SESSION[ 'user_ID' ] );
 	$notification_list->show();
 }
 ?>

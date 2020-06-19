@@ -69,7 +69,7 @@ class Notification extends Entity
 		}		
 		elseif( isset( $this->recipients ) && isset( $this->title ) && isset( $this->message ) && isset( $this->url ) )
 		{
-			if ( $mysqli = AsMySQLi::connect2db( $technical_error, $throw_exceptions ) )
+			if ( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured.", $throw_exceptions ) )
 			{
 				$mysqli->autocommit( false );
 				$ok = true;
@@ -120,7 +120,7 @@ class Notification extends Entity
 					$mysqli->rollback();
 					if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 					{
-						throw new AsDbErrorException( $technical_error );
+						throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 					}
 					$mysqli->close();
 					return false;
@@ -172,7 +172,7 @@ class Notification extends Entity
 		
 		if( $data && $this->has_changed( $data ) )
 		{
-			if ( $mysqli = AsMySQLi::connect2db( $technical_error, $throw_exceptions ) )
+			if ( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured.", $throw_exceptions ) )
 			{
 				// Query to update the notification in the database.
 				$query = "
@@ -199,7 +199,7 @@ class Notification extends Entity
 					if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 					{
 						$mysqli->close();
-						throw new AsDbErrorException( $technical_error );
+						throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 					}
 				}
 				$mysqli->close();
@@ -257,7 +257,7 @@ class Notification extends Entity
 	{
 		$ok = false;
 		if( $this->exists_in_db( $throw_exceptions ) 
-			&& ( $mysqli = AsMySQLi::connect2db( $technical_error ) ) )
+			&& ( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured." ) ) )
 		{
 			// Update the event in the database.
 			$query = "
@@ -278,7 +278,7 @@ class Notification extends Entity
 				if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 				{
 					$mysqli->close();
-					throw new AsDbErrorException( $technical_error );
+					throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 				}
 			}
 			$mysqli->close();
@@ -330,7 +330,7 @@ class Notification extends Entity
 		}
 		else
 		{
-			if( $mysqli = AsMySQLi::connect2db( $technical_error, $throw_exceptions ) )
+			if( $mysqli = AsMySQLi::connect2db( "We apologize, but a technical error has occured.", $throw_exceptions ) )
 			{
 				
 				// Locating the notification in the database.
@@ -378,7 +378,7 @@ class Notification extends Entity
 					if( $throw_exceptions >= AsException::THROW_DB_ERROR )
 					{
 						$mysqli->close();
-						throw new AsDbErrorException( $technical_error );
+						throw new AsDbErrorException( "We apologize, but a technical error has occured." );
 					}
 					$ok = false;
 				}

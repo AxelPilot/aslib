@@ -6,7 +6,7 @@ namespace com\axelsmidt\aslib;
 
 // ************************************************************************
 
-class AsMySQLi extends MySQLi
+class AsMySQLi extends \MySQLi
 { 
   
 // ************************************************************************

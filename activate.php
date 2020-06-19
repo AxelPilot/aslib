@@ -41,12 +41,12 @@ if ( ( $x > 0 ) && ( strlen( $y ) == 32 ) )
 		// Print a customized message.
 		if ( $mysqli->affected_rows == 1 )
 		{
-			redirect( "login.php?msg=" . $account_is_activated );
+			redirect( "login.php?msg=" . "Your account is now activated." );
 			exit();
 		}
 		else
 		{
-			redirect( "index.php?msg=" . $account_couldnt_be_activated );
+			redirect( "index.php?msg=" . "Your account couldn't be activated." );
 			exit();
 		}
 	
@@ -60,7 +60,7 @@ if ( ( $x > 0 ) && ( strlen( $y ) == 32 ) )
 }
 else
 {
-	redirect( 'index.php?msg=' . $account_couldnt_be_activated );
+	redirect( 'index.php?msg=' . "Your account couldn't be activated." );
 	exit();
 } // End of main IF-ELSE.
 

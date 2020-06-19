@@ -3,8 +3,8 @@
 // ************************************************************************
 // No error messages will be shown to the user.
 
-// error_reporting( E_ALL );
-error_reporting( 0 );
+error_reporting( E_ALL );
+// error_reporting( 0 );
 
 // ************************************************************************
 // ************************************************************************
@@ -46,7 +46,5 @@ if ( !isset( $page_title ) )
 
 if ( !isset( $errorlogpath ) )
 {
-	$errorlogpath = "./error/errorlog.txt";
+	$errorlogpath = "error/errorlog.txt";
 }
-
-?>
